@@ -1,11 +1,11 @@
 # 1.查询同时存在1课程和2课程的情况
-
+-- TODO
 # 2.查询同时存在1课程和2课程的情况
-
+-- TODO
 # 3.查询平均成绩大于等于60分的同学的学生编号和学生姓名和平均成绩
 select s.id,s.name,avg(sc.score) from student s,student_course sc where s.id=sc.studentId group by s.id having avg(sc.score)>=60;
 # 4.查询在student_course表中不存在成绩的学生信息的SQL语句
-
+select * from student where id not in (select studentID from student_course);
 # 5.查询所有有成绩的SQL
 select distinct s.* from student s,student_course sc where s.id=sc.studentId;
 # 6.查询学过编号为1并且也学过编号为2的课程的同学的信息
